@@ -1,0 +1,2 @@
+rząd dla dyskretyzacji trzypunktową konwencjonalną: 1.99658
+rząd dla dyskretyzacji Numerowa: 3.95029

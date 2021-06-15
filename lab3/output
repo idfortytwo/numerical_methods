@@ -1,0 +1,67 @@
+Rozwiązujemy układ równań w postaci Ax = b metodą dekompozycji
+Macierz A:
+1   -20    30    -4
+2   -40    -6    50
+9  -180    11   -12
+-16    15  -140    13
+
+Wektor b:
+35   104  -366  -354
+
+
+Zaczynamy dekompozycję LU
+        Po iteracji 1:
+1      -20       30       -4
+0        0      -66       58
+0        0     -259       24
+0     -305      340      -51
+
+Zamiana kolumn 1 oraz 3:
+1      -20       30       -4
+0     -305      340      -51
+0        0     -259       24
+0        0      -66       58
+
+Po iteracji 2:
+1      -20       30       -4
+0     -305      340      -51
+0        0     -259       24
+0        0      -66       58
+
+Po iteracji 3:
+1      -20       30       -4
+0     -305      340      -51
+0        0     -259       24
+0        0        0  51.8842
+
+Po dekompozycji otrzymaliśmy macierze L oraz U
+        Macierz L:
+1        0        0        0
+-16        1        0        0
+9        0        1        0
+2        0 0.254826        1
+
+Macierz U:
+1      -20       30       -4
+0     -305      340      -51
+0        0     -259       24
+0        0        0  51.8842
+
+Nowa kolejność wierszy w macierzach L, U oraz wektorze b,
+która powstała w wyniku zamian wierszy po wyborze częściowym:
+0  3  2  1
+Wektor b po zmianie kolejności wierszy:
+35     -354     -366      104
+
+Rozwiązujemy układ równań Ly = b, gdzie L - macierz dolnotrójkątna
+Wektor y:
+35      206     -681  207.537
+
+Rozwiązujemy układ równań Ux = y, gdzie U - macierz górnotrójkątna
+Wektor x:
+1        2        3        4
+Znaleźliśmy rozwiązanie dla układu równań Ax = b
+
+Na koniec sprawdźmy czy otrzymany wektor x faktycznie zawiera rozwiązania do pierwotnego równania Ax = b
+35        104       -366       -354
+Po wymnożeniu macierzy A i obliczonego wektora x ewidentnie otrzymaliśmy wektor b
